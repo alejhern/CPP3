@@ -20,7 +20,9 @@ class FragTrap : public virtual ClapTrap
   public:
     FragTrap(void);
     FragTrap(string const &name);
+    FragTrap(FragTrap const &src);
     ~FragTrap(void);
+    FragTrap &operator=(FragTrap const &rhs);
     void high_fives_guys(void);
 };
 

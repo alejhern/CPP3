@@ -30,9 +30,26 @@ DiamondTrap::DiamondTrap(string const &name) : ScavTrap(name), FragTrap(name)
     std::cout << "DiamondTrap " << this->ClapTrap::get_name() << " created with name constructor." << std::endl;
 }
 
+DiamondTrap::DiamondTrap(DiamondTrap const &src) : ClapTrap(src), ScavTrap(src), FragTrap(src)
+{
+    this->_name = src._name;
+    std::cout << "DiamondTrap " << this->ClapTrap::get_name() << " created with copy constructor." << std::endl;
+}
+
 DiamondTrap::~DiamondTrap()
 {
     std::cout << "DiamondTrap " << this->ClapTrap::get_name() << " destroyed." << std::endl;
+}
+
+DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs)
+{
+    if (this != &rhs)
+    {
+        ScavTrap::operator=(rhs);
+        FragTrap::operator=(rhs);
+        this->_name = rhs._name;
+    }
+    return (*this);
 }
 
 void DiamondTrap::who_am_i(void)

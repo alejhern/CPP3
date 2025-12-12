@@ -22,7 +22,9 @@ class ScavTrap : public virtual ClapTrap
   	public:
 		ScavTrap(void);
 		ScavTrap(string const &name);
+		ScavTrap(ScavTrap const &src);
 		~ScavTrap(void);
+		ScavTrap &operator=(ScavTrap const &rhs);
 		void guard_gate(void);
 };
 

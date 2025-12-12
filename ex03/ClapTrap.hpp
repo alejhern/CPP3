@@ -28,6 +28,7 @@ class ClapTrap
   public:
 	ClapTrap(void);
 	ClapTrap(string const &name);
+	ClapTrap(ClapTrap const &src);
 	~ClapTrap(void);
 	ClapTrap &operator=(ClapTrap const &rhs);
 	void attack(const string &target);

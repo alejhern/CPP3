@@ -28,9 +28,23 @@ FragTrap::FragTrap(string const &name) : ClapTrap(name)
     std::cout << "FragTrap " << this->get_name() << " created with name constructor." << std::endl;
 }
 
+FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src)
+{
+    std::cout << "FragTrap " << this->get_name() << " created with copy constructor." << std::endl;
+}
+
 FragTrap::~FragTrap(void)
 {
     std::cout << "FragTrap " << this->get_name() << " destroyed." << std::endl;
+}
+
+FragTrap &FragTrap::operator=(FragTrap const &rhs)
+{
+    if (this != &rhs)
+    {
+        ClapTrap::operator=(rhs);
+    }
+    return (*this);
 }
 
 void FragTrap::high_fives_guys(void)

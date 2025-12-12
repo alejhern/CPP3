@@ -23,7 +23,13 @@ ClapTrap::ClapTrap(string const &name) : _name(name), _hit_points(10),
 {
 	std::cout << "ClapTrap " << this->_name << " created with name constructor." << std::endl;
 }
-	
+
+ClapTrap::ClapTrap(ClapTrap const &src)
+{
+	*this = src;
+	std::cout << "ClapTrap " << this->_name << " created with copy constructor." << std::endl;
+}
+
 ClapTrap::~ClapTrap(void)
 {
 	std::cout << "ClapTrap " << this->_name << " destroyed." << std::endl;
